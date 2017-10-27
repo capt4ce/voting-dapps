@@ -19,6 +19,10 @@ contract Voting {
   deploy the contract to the blockchain. When we deploy the contract,
   we will pass an array of candidates who will be contesting in the election
   */
+
+  event Vote(bytes32 indexed name, address indexed voter);
+  event TotalVotes(uint timestamp);
+
   function Voting(bytes32[] candidateNames) {
     candidateList = candidateNames;
     votesReceived["Rama"] = 5;
@@ -26,6 +30,7 @@ contract Voting {
 
   // This function returns the total votes a candidate has received so far
   function totalVotesFor(bytes32 candidate) returns (uint8) {
+    TotalVotes(now);
     if (validCandidate(candidate) == false) 
       throw;
     return votesReceived[candidate];
@@ -37,6 +42,7 @@ contract Voting {
     if (validCandidate(candidate) == false) 
       throw;
     votesReceived[candidate] += 1;
+    Vote(candidate, msg.sender);
   }
 
   function validCandidate(bytes32 candidate) returns (bool) {

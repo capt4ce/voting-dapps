@@ -20,5 +20,5 @@ console.log(JSON.stringify(abiDefinition))
 console.log('from: ' + web3.eth.accounts[0])
 console.log('account [0] balance: ' + web3.eth.getBalance(web3.eth.accounts[0]))
 console.log('web3 ready...')
-console.log('transaction ' + web3.fromWei('0x0a8cd6385a35bb464d45589f35a22664f651a3d7', 'ether'))
+console.log('transaction ' + JSON.stringify(web3.eth.getTransaction('0xb3c9b26745dbd1cd2327700ef984686029e6613993170ad7f314f37e963d8adc')))
 
