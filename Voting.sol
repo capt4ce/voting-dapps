@@ -21,18 +21,21 @@ contract Voting {
   */
   function Voting(bytes32[] candidateNames) {
     candidateList = candidateNames;
+    votesReceived["Rama"] = 5;
   }
 
   // This function returns the total votes a candidate has received so far
   function totalVotesFor(bytes32 candidate) returns (uint8) {
-    if (validCandidate(candidate) == false) throw;
+    if (validCandidate(candidate) == false) 
+      throw;
     return votesReceived[candidate];
   }
 
   // This function increments the vote count for the specified candidate. This
   // is equivalent to casting a vote
   function voteForCandidate(bytes32 candidate) {
-    if (validCandidate(candidate) == false) throw;
+    if (validCandidate(candidate) == false) 
+      throw;
     votesReceived[candidate] += 1;
   }
 
@@ -43,5 +46,10 @@ contract Voting {
       }
     }
     return false;
+    // return true;
+  }
+
+  function getCandidates() returns (bytes32[]) {
+    return candidateList;
   }
 }

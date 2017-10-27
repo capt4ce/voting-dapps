@@ -1,0 +1,25 @@
+{
+  "name": "your_first_decentralized_application",
+  "version": "1.0.0",
+  "description": "This is the code for \"A Guide to Building Your First Decentralized Application\" by Siraj Raval on Youtube",
+  "main": "app.js",
+  "dependencies": {
+    "ethereum.js": "^0.2.4",
+    "solc": "^0.4.18",
+    "web3": "^0.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llSourcell/Your_First_Decentralized_Application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llSourcell/Your_First_Decentralized_Application/issues"
+  },
+  "homepage": "https://github.com/llSourcell/Your_First_Decentralized_Application#readme"
+}
